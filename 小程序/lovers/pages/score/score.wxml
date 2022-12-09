@@ -1,0 +1,61 @@
+<!--pages/score/score.wxml-->
+<view class="main padding radius text-center shadow-blur">
+    <!-- <image class="bg-image" src="/img/bg.jpg"></image> -->
+    <view class="padding flex text-center text-grey bg-white shadow-warp">
+        <view class="flex flex-sub flex-direction solid-right">
+            <view class="text-xxl text-orange">{{integration}}</view>
+            <view class="margin-top-sm">
+                <text class="cuIcon-selectionfill"> 积分</text>
+            </view>
+        </view>
+        <view class="flex flex-sub flex-direction solid-right">
+            <view class="text-xxl text-orange">{{gold}}</view>
+            <view class="margin-top-sm">
+                <text class="cuIcon-favor"> 金币</text>
+            </view>
+        </view>
+        <view class="flex flex-sub flex-direction solid-right">
+            <view class="text-xxl text-orange">{{day}}天</view>
+            <view class="margin-top-sm">
+                <text class="cuIcon-like"> 相恋</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- <view class="score">
+         <view class="padding-xl radius shadow-warp bg-white">
+        </view>
+        </view> -->
+
+    <scroll-view scroll-x class="score bg-white nav text-center">
+        <view class="cu-item {{index==TabCur?'text-blue cur':''}}" wx:for="{{2}}" wx:key bindtap="tabSelect" data-id="{{index}}"  wx:key="k">
+            {{nav_name[index]}}
+        </view>
+
+        <view wx:if="{{TabCur==0}}" class="margin-top" >
+            <view class="xxxx radius shadow-warp bg-white flex" wx:for="{{add_List}}" wx:for-item="item"  wx:key="key">
+                <text class="cuIcon-roundcheck lg text-green "></text>
+                <text class="xxxx-txt ">{{item.text}}</text>
+                <view class="xxxx-jiaonang round bg-green flex align-center shadow-warp ">
+                    <text class="cuIcon-favorfill lg text-white"></text>
+                    <view class="align-center flex">
+                        <text>+{{item.score}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{TabCur==1}}" class="margin-top">
+            <view class="xxxx radius shadow-warp bg-white flex" wx:for="{{sub_List}}" wx:for-item="item">
+                <text class="cuIcon-roundclose lg text-red "></text>
+                <text class="xxxx-txt ">{{item.text}}</text>
+                <view class="xxxx-jiaonang round bg-orange flex align-center shadow-warp ">
+                    <text class="cuIcon-favorfill lg text-white"></text>
+                    <view class="align-center flex">
+                        <text>-{{item.score}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+
+</view>

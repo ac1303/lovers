@@ -1,0 +1,33 @@
+<!--pages/operation/operation.wxml-->
+<view class="padding">
+    <view class="radius shadow bg-white">
+        <view class="cu-form-group margin-top">
+            <view class="title">操作</view> 
+            <picker bindchange="PickerChangeScore" value="{{score_index}}" range="{{score_picker}}">
+                <view class="picker">
+                    {{score_index >= 0 ? score_picker[score_index]:'请选择操作'}}
+                </view>
+            </picker>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">类型</view> 
+            <picker bindchange="PickerChangeGold" value="{{gold_index}}" range="{{gold_picker}}">
+                <view class="picker">
+                    {{gold_index >= 0 ? gold_picker[gold_index]:'请选择操作'}}
+                </view>
+            </picker>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">分数：</view>
+            <input bindinput="getScore" type="number" placeholder="请输入分数"></input>
+        </view>
+        <view class="cu-form-group align-start">
+            <view class="title">原因：</view>
+            <textarea maxlength="-1" bindinput="getReason" placeholder="原因不能为空"></textarea>
+        </view>
+    </view>
+
+    <view class="padding flex flex-direction">
+        <button class="cu-btn bg-blue lg" bindtap="submoit">提交</button>
+    </view>
+</view>

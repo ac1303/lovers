@@ -1,0 +1,13 @@
+<!--pages/history/history.wxml-->
+<view class="cu-timeline" wx:for="{{list}}" wx:for-item="item">
+  <view class="cu-time">{{item.time}}</view>
+  <view class="cu-item">
+    <view class="content">
+      <view class="cu-capsule radius">
+        <view class="cu-tag {{item.operation == 1 || item.operation == 3 ? 'bg-cyan' : 'bg-red'}}">{{item.openId}}{{item.operation == 1 || item.operation == 3 ? '加' : '减'}}</view>
+        <view class="cu-tag line-cyan">{{item.score}} {{item.operation == 1 ? '好感度' : item.operation == 3 ? '金币' : item.operation == 2 ? '好感度' : '金币'}}</view>
+      </view>
+      <view class="margin-top">{{item.reason}}</view>
+    </view>
+  </view>
+</view>

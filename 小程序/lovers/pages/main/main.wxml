@@ -1,0 +1,60 @@
+<!--pages/main/main.wxml-->
+
+<view class="container"  wx:if="{{!competence}}">
+    <view class="userinfo">
+    <block>
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block>
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <!-- <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block> -->
+  </view>
+
+</view>
+
+
+
+<view class="main padding radius text-center shadow-blur"  wx:if="{{competence}}">
+<image class="bg-image" src="/img/bg.jpg"></image>
+
+    <view class="margin-150 padding flex">
+        <View class="heig-100 flex-sub bg-white padding-sm margin-xs radius-10 shadow-warp" bindtap="Signin">
+            <image style="height: 75%; width: 60px;" src="/img/1.jpg"></image>
+            <view>签到</view>
+        </View>
+        <View class="heig-100 flex-sub bg-white padding-sm margin-xs radius-10 shadow-warp" bindtap="JumpScorePages"  data-id="1">
+            <image style="height: 75%; width: 70px;" src="/img/2.jpg"></image>
+            <view>我的积分</view>
+        </View>
+        <View class="heig-100 flex-sub bg-white padding-sm margin-xs radius-10 shadow-warp" bindtap="JumpScorePages" data-id="2">
+            <image style="height: 75%; width: 60px;" src="/img/6.jpg"></image>
+            <view>ta的积分</view>
+        </View>
+    </view>
+
+    <View class="heig-120 radius-30 shadow-warp bg-white margin-top flex solid-bottom padding align-center" bindtap="JumpOperationPages">
+        <!-- <image class=" radius-30" style="height: 100%; width: 100%;" src="/img/3.jpg"></image> -->
+        <view class="flex-treble justify-start viewText">
+            <text>恋爱记账本</text>
+        </view>
+        <image style="height: 100%; width: 70px;" src="/img/3.jpg"></image>
+
+    </View>
+    <View class="heig-120 radius-30 shadow-warp bg-white margin-top flex solid-bottom padding align-center" bindtap="JumpHistoryPages">
+        <!-- <image class=" radius-30" style="height: 100%; width: 100%;" src="/img/4.jpg"></image> -->
+        <!-- <text class="viewText text-white">查看历史</text> -->
+        <view class="flex-treble justify-start viewText">
+            <text>甜蜜日记本</text>
+        </view>
+        <image style="height: 100%; width: 80px;" src="/img/2.jpg"></image>
+    </View>
+</view>

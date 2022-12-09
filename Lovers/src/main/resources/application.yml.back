@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+appid: wx***4c
+secret: 875***ff370
+grant_type: authorization_code
+
+
+spring:
+  datasource:
+    password: 00000
+    username: 00000
+    url: jdbc:mysql://???:3306/lovers?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    hikari:
+      max-lifetime: 60000
+

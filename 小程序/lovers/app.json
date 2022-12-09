@@ -1,0 +1,19 @@
+{
+    "pages": [
+        "pages/main/main",
+        "pages/logs/logs",
+        "pages/index/index",
+        "pages/score/score",
+        "pages/operation/operation",
+        "pages/history/history"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+}
